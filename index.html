@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kroxtrain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #contenedor {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .carrusel {
+            width: 100%;
+            display: flex;
+            font-size: 30px;
+            margin: 0 auto;
+            transition: transform 0.1s ease-in-out; 
+        }
+
+        .quote {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 28px;
+            color: white;
+        }
+
+        .quote p {
+        text-align: center; 
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            font-family: Bebas Neue, serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 60px;
+            margin: 0 20px auto;
+            position: relative;
+            
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 500px) {
+        
+        .quote {
+            padding: 10px;
+            line-height: 22px;
+        }
+        
+        .carrusel {
+            font-size: 22px; 
+            }
+        }
+        
+          
+    </style>
+</head>
+<body>
+    <div id="forward">
+        <img src="logo.png" alt="logo" class="logo"> 
+    </div>
+
+    <div id="backward">
+        <div class="carrusel" id="carrusel">
+            <div class="quote"> <img src="/post/2.png" alt=""></div>
+            <div class="quote"> <img src="/post/3.png" alt=""></div>
+            <div class="quote"> <img src="/post/4.png" alt=""></div>
+            <div class="quote"> <img src="/post/5.png" alt=""></div>
+            <div class="quote"> <img src="/post/6.png" alt=""></div>
+            <div class="quote"> <img src="/post/7.png" alt=""></div>
+            <div class="quote"> <img src="/post/8.png" alt=""></div>
+            <div class="quote"> <img src="/post/9.png" alt=""></div>
+            <div class="quote"> <img src="/post/10.png" alt=""></div>
+            <div class="quote"> <img src="/post/11.png" alt=""></div>
+            <div class="quote"> <img src="/post/12.png" alt=""></div>
+            <div class="quote"> <img src="/post/13.png" alt=""></div>
+            <div class="quote"> <img src="/post/14.png" alt=""></div>
+            <div class="quote"> <img src="/post/15.png" alt=""></div>
+            <div class="quote"> <img src="/post/16.png" alt=""></div>
+            <div class="quote"> <img src="/post/17.png" alt=""></div>
+            <div class="quote"> <img src="/post/18.png" alt=""></div>
+            <div class="quote"> <img src="/post/19.png" alt=""></div>
+            
+        </div>
+    </div>
+
+    <!--
+            <div class="quote">1 0 T T T 1 0 2 5 M</div>
+            <div class="quote">"DYNAMITE"<br>5 T T L 8 1 2 1 6 1 5 M</div>
+            <div class="quote">A R 2 0 M 5 T T T 1 5 1 2 9</div>
+            <div class="quote">"TSUNAMI"<br>4 0 0 R T T L 1 5 3 0 1 5 2 5 M</div>
+            <div class="quote">5 T T T 5 0 2 0 1 0 2 0 M</div>
+            <div class="quote">"ATLAS" <br>3 E 3 M P P</div>
+            <div class="quote">A R 2 0 M 1 2 1 5 1 8 T T L </div>
+            <div class="quote">"INFERNO" <br> 2 1 1 5 9 P T T 1 5 1 2 9 L T T 2 5 M</div>
+            <div class="quote">5 T L P 1 5 1 2 9 1 8 M</div>
+            <div class="quote">"KRAKEN"<br>5 0 4 0 3 0 2 0 1 0 P P L P P 3 0 M</div>
+            <div class="quote">"KRAKEN"<br>A R 2 0 M 1 0 2 0 1 5 T T T</div>
+            <div class="quote">"PHOENIX"<br></div>
+            <div class="quote">"LIGHTNING" <br>A R 2 0 M 1 0 2 0 1 5 T T T</div>
+            <div class="quote">"ALLIANCE" <br>A R 2 0 M 1 0 2 0 1 5 T T T</div>
+
+
+    -->
+
+    <script>
+        const carrusel = document.getElementById('carrusel');
+        let indiceActual = 0;
+        // Store the total number of items
+        const totalItems = carrusel.children.length;
+
+        // Function to move the carousel
+        function moverCarrusel() {
+            const translateX = -indiceActual * 100 + '%';
+            carrusel.style.transform = `translateX(${translateX})`;
+        }
+
+        // Add a click event to the container to move forward
+        document.getElementById('forward').addEventListener('click', function() {
+            indiceActual = (indiceActual + 1) % totalItems; 
+            moverCarrusel();
+        });
+
+        // Add a click event to the container to move backward
+        document.getElementById('backward').addEventListener('click', function() {
+            indiceActual = (indiceActual - 1 + totalItems) % totalItems; 
+            moverCarrusel();
+        });
+
+        // Initialize the carousel on the first item
+        moverCarrusel();
+    </script>
+</body>
+</html>
