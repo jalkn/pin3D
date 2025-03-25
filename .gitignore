@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+.venv
+.env
+.vscode
+3d.py
+turtle.py
+scripts/
+stls/
