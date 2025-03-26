@@ -45,11 +45,11 @@ function createStructure {
 
     # Create Python virtual environment
     python -m venv .venv
-    .\.venv\Scripts\Activate.ps1
+    #.\.venv\Scripts\Activate.ps1
 
     # Upgrade pip and install required packages
-    python -m pip install --upgrade pip
-    python -m pip install scipy pyvista trimesh numpy pybullet panda3d
+    pip install --upgrade pip
+    pip install scipy pyvista trimesh numpy pybullet panda3d
 
     # Always create subdirectories
     Write-Host "🏗️ Creating directory structure" -ForegroundColor $YELLOW
@@ -70,6 +70,28 @@ function createStructure {
     }
 }
 
+function createDMG {
+    Write-Host "📦 Creating DMG" -ForegroundColor $GREEN
+
+    # DMG filename
+    $dmgName = "PinealGallery.dmg"
+
+    # Temporary directory for DMG creation
+    $tempDir = "temp_dmg"
+    New-Item -Path $tempDir -ItemType Directory -Force
+
+    # Copy the 'stls' directory into the temporary directory
+    Copy-Item -Path "stls" -Destination "$tempDir/stls" -Recurse
+
+    # Create the DMG file
+    hdiutil create "$dmgName" -volname "PinealGallery" -srcfolder "$tempDir" -ov
+
+    # Clean up the temporary directory
+    Remove-Item -Path $tempDir -Recurse -Force
+
+    Write-Host "✅ DMG created: $dmgName" -ForegroundColor $GREEN
+}
+
 function main {
     Write-Host "🏗️ Pineal Gallery" -ForegroundColor $NC
 
@@ -83,6 +105,10 @@ function main {
     # Generate STLS
     generateSTLS
 
+    # Create the DMG
+    createDMG
+
+    Write-Host "✅ Process completed." -ForegroundColor $NC
     Write-Host "🏗️ The STLS are generated" -ForegroundColor $YELLOW
 }
 
