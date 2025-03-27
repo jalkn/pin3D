@@ -2,7 +2,6 @@ import numpy as np
 import trimesh
 
 def create_octahedron():
-    """Creates an octahedron mesh."""
     vertices = np.array([
         [1, 0, 0],
         [-1, 0, 0],

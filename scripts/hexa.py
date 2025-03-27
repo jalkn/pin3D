@@ -21,7 +21,7 @@ def create_triangular_prism():
         [0, 5, 3]
     ])
     prism = trimesh.Trimesh(vertices=vertices, faces=faces)
-    prism.visual.face_colors = [255, 0, 255, 255]  # Purple color
+    prism.visual.face_colors = [0, 0, 255, 255]  # Purple color
     return prism
 
 prism_mesh = create_triangular_prism()
