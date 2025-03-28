@@ -1,154 +1,228 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pinArt</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>OverTsea</title>
+    <link rel="shortcut icon" href="./static/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        #contenedor {
+        
+        .itemCarrusel{
+            position: relative; 
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: space-around;
+            padding-top: 50%;
         }
-
-        .carrusel {
+        
+        
+        .tarjetaCarrusel{
+            background-color: rgb(8, 64, 45);
+            position: absolute; 
+            top: 0;
+            left: 0;
             width: 100%;
-            display: flex;
-            font-size: 30px;
-            margin: 0 auto;
-            transition: transform 0.1s ease-in-out; 
+            height: 100%;
         }
-
-        .quote {
-            min-width: 100%;
+        
+        .flechasCarrusel{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
-            line-height: 28px;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        
+        .flechasCarrusel a > i{  
             color: white;
+            font-size: 30px;
         }
 
-        .quote p {
-        text-align: center; 
-        }
-
-        body {
-            background-color: rgb(0, 0, 0);
-            color: rgb(0, 0, 0);
-            font-family: Bebas Neue, serif;
+        .menu {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 60px;
-            margin: 0 20px auto;
-            position: relative;
-            
-        }
-
-        /* Estilos responsive */
-        @media (max-width: 500px) {
-        
-        .quote {
+            justify-content: space-around; /* Evenly space menu items */
             padding: 10px;
-            line-height: 22px;
+            background-color: #000000; /* Or any other color you prefer */
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background-color: #000000;
         }
         
-        .carrusel {
-            font-size: 22px; 
-            }
+        #container{
+            width: 100%; 
+            max-width: 2000px; 
+            margin: 0 auto; 
+            overflow: hidden;
         }
         
-          
+        .logo-container {
+            width: 100px;
+            height: 100px * (5/3);
+            position: relative;
+        }
+        
+        h6{
+            font-size: 12px;
+            position: absolute;
+            bottom: 150px;
+            color: white;
+            transform: translateX(-50%); 
+        }
+        
     </style>
 </head>
 <body>
-    <div id="forward">
-        <img src="favicon.png" alt="logo" class="logo"> 
-    </div>
-
-    <div id="backward">
-        <div class="carrusel" id="carrusel">
-            <div class="quote"> <img src="/img/cylinder.stl" alt=""></div>
-            <div class="quote"> <img src="/img/hexahedron.stl" alt=""></div>
-            <div class="quote"> <img src="/img/octahedron.stl" alt=""></div>
-            <div class="quote"> <img src="/img/prism.stl" alt=""></div>
-            <div class="quote"> <img src="/img/tetrahedron.stl" alt=""></div>
-            <div class="quote"> <img src="/img/6.PNG" alt=""></div>
-            <div class="quote"> <img src="/img/7.PNG" alt=""></div>
-            <div class="quote"> <img src="/img/8.JPG" alt=""></div>
+    <div id="container">
+        <div>
+            <div class="menu">
+                <a href="#01">1</a>
+                <a href="#02">2</a>
+                <a href="#03">3</a>
+                <a href="#04">4</a>
+                <a href="#05">5</a>
+                <a href="#06">6</a>
+                <a href="#07">7</a>
+                <a href="#08">8</a>
+                <a href="#09">9</a>
+                <a href="#10">1 0</a>
+                <a href="#11">1 1</a>
+                <a href="#12">1 2</a>
+                <a href="#13">1 3</a>
+                <a href="#14">1 4</a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="01">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/1.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#14"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#02"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="02">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/2.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#1"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#03"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="03">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/3.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#02"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#04"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="04">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/4.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#03"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#05"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="05">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/5.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#04"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#06"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="06">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/6.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#05"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#07"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="07">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/7.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#06"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#08"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="08">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/8.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#07"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#09"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="09">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/9.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#08"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#10"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="10">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/10.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#09"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#11"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="11">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/11.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#10"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#12"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="12">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/12.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#11"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#13"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="13">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/13.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#12"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#14"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="itemCarrusel" id="14">
+            <div class="tarjetaCarrusel" id="tarjeta2"><img src="./img/14.png" alt=""></div>
+            <div class="flechasCarrusel">
+                <a href="#13"><i class="fa fa-chevron-left" ></i></a>
+                <div class="logo"><h6>©Alejalkndro Monsalve 2022 - Serie Over The Sea</h6></div>
+                <a href="#1"><i class="fa fa-chevron-right"></i></a>
+            </div>
         </div>
     </div>
-
-    <!--
-            <div class="quote">1 0 T T T 1 0 2 5 M</div>
-            <div class="quote">"DYNAMITE"<br>5 T T L 8 1 2 1 6 1 5 M</div>
-            <div class="quote">A R 2 0 M 5 T T T 1 5 1 2 9</div>
-            <div class="quote">"TSUNAMI"<br>4 0 0 R T T L 1 5 3 0 1 5 2 5 M</div>
-            <div class="quote">5 T T T 5 0 2 0 1 0 2 0 M</div>
-            <div class="quote">"ATLAS" <br>3 E 3 M P P</div>
-            <div class="quote">A R 2 0 M 1 2 1 5 1 8 T T L </div>
-            <div class="quote">"INFERNO" <br> 2 1 1 5 9 P T T 1 5 1 2 9 L T T 2 5 M</div>
-            <div class="quote">5 T L P 1 5 1 2 9 1 8 M</div>
-            <div class="quote">"KRAKEN"<br>5 0 4 0 3 0 2 0 1 0 P P L P P 3 0 M</div>
-            <div class="quote">"KRAKEN"<br>A R 2 0 M 1 0 2 0 1 5 T T T</div>
-            <div class="quote">"PHOENIX"<br></div>
-            <div class="quote">"LIGHTNING" <br>A R 2 0 M 1 0 2 0 1 5 T T T</div>
-            <div class="quote">"ALLIANCE" <br>A R 2 0 M 1 0 2 0 1 5 T T T</div>
-
-
-    -->
-
-    <script>
-        const carrusel = document.getElementById('carrusel');
-        let indiceActual = 0;
-        // Store the total number of items
-        const totalItems = carrusel.children.length;
-
-        // Function to move the carousel
-        function moverCarrusel() {
-            const translateX = -indiceActual * 100 + '%';
-            carrusel.style.transform = `translateX(${translateX})`;
-        }
-
-        // Add a click event to the container to move forward
-        document.getElementById('forward').addEventListener('click', function() {
-            indiceActual = (indiceActual + 1) % totalItems; 
-            moverCarrusel();
-        });
-
-        // Add a click event to the container to move backward
-        document.getElementById('backward').addEventListener('click', function() {
-            indiceActual = (indiceActual - 1 + totalItems) % totalItems; 
-            moverCarrusel();
-        });
-
-        // Initialize the carousel on the first item
-        moverCarrusel();
-    </script>
 </body>
 </html>
